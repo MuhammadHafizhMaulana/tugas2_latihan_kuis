@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class OrderPage extends StatefulWidget {
   final String namaMakanan;
   final int harga;
+  final String gambar;
 
 
-const OrderPage({super.key, required this.namaMakanan, required this.harga});
+const OrderPage({super.key, required this.namaMakanan, required this.harga, required this.gambar});
 
 @override
 _OrderPageState createState() => _OrderPageState();
@@ -26,6 +27,16 @@ class _OrderPageState extends State<OrderPage>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset(
+                widget.gambar, // Menggunakan gambar dari parameter
+                height: 400,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 20),
             Text(
               "Pesanan Anda : ${widget.namaMakanan}",
               style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

@@ -64,6 +64,7 @@ class MenuPage extends StatelessWidget {
                         builder: (context) => OrderPage(
                           namaMakanan: makanan['nama'],
                           harga: makanan['harga'],
+                          gambar: makanan['gambar'],
                         ),
                       ),
                     );
